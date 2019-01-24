@@ -1,0 +1,13 @@
+version: '3'
+services:
+    XMLtoCSV:
+        image: java
+        volumes:
+            - "./:/pwd"
+        command:
+            # Hardcoded input/output files 
+            # bash -c "java -jar /xml2csv-conv.jar /pwd/in.xml /pwd/out.csv"
+
+            # Example command-line input:
+            # file=filename docker-compose up
+            bash -c "java -jar /xml2csv-conv.jar /pwd/${file}.xml /pwd/${file}.csv"
